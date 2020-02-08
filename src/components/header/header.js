@@ -15,6 +15,10 @@ const Header = () => {
             site {
                 siteMetadata {
                     title
+                    github
+                    linkedin
+                    twitter
+                    email
                 }
             }
         }
@@ -30,16 +34,15 @@ const Header = () => {
             <nav>
                 <ul className={headerStyles.navList}>
                     <li><Link className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem} to="/">Home</Link></li>
-                    <li><Link className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem} to="/blog">Blog</Link></li>
                     <li><Link className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem} to="/about">About</Link></li>
                     <li><Link className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem} to="/contact">Contact</Link></li>
                 </ul>
                 <span><img onClick={() => showMenu()} src={menu} className={headerStyles.menu}/></span>
                 <ul ref={icons} className={headerStyles.socialLinks}>
-                    <li><a href="mailto:nikvats5499@gmail.com" target="_blank"><img src={email} /></a></li>
-                    <li><a href="https://github.com/Nikhil-Vats" target="_blank"><img src={github} /></a></li>
-                    <li><a href="https://www.linkedin.com/in/nikhil-vats/" target="_blank"><img src={linkedin} /></a></li>
-                    <li><a href="https://twitter.com/NikhilVatss" target="_blank"><img src={twitter} /></a></li>
+                    <li><a href={"mailto:"+data.site.siteMetadata.email} target="_blank"><img src={email} /></a></li>
+                    <li><a href={data.site.siteMetadata.github} target="_blank"><img src={github} /></a></li>
+                    <li><a href={data.site.siteMetadata.linkedin} target="_blank"><img src={linkedin} /></a></li>
+                    <li><a href={data.site.siteMetadata.twitter} target="_blank"><img src={twitter} /></a></li>
                 </ul>
             </nav>
         </header>

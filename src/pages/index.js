@@ -7,7 +7,7 @@ import Head from "../components/head";
 import link from "../assets/link.svg";
 import location from "../assets/location.svg";
 import date from "../assets/date.svg"
-import logo from "../assets/logo.png";
+import logo from "../assets/logo.svg";
 import arrow from "../assets/up-arrow.svg";
 import indexStyles from "../styles/index.module.scss";
 
@@ -16,6 +16,7 @@ const IndexPage = () => {
         query {
             site {
                 siteMetadata {
+                    title
                     resumeLink
                     projects {
                         heading
@@ -42,7 +43,7 @@ const IndexPage = () => {
             <Head title="Home"/>
             <div className={indexStyles.introduction}>
                 <div>
-                    <h2 className={indexStyles.line1}>Hello, I'm Nikhil, a full-stack developer living in India!</h2>
+                    <h2 className={indexStyles.line1}>Hello, I'm {data.site.siteMetadata.title}, a full-stack developer living on Mars!</h2>
                     <a className={indexStyles.resumeLink} href={data.site.siteMetadata.resumeLink} target="_blank">Resume</a>
                 </div>
                 <img className={indexStyles.image} src={logo} alt="" />

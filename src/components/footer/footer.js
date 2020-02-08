@@ -18,7 +18,11 @@ const Footer = () => {
     `)
     return (
         <div className={footerStyles.footer}>
-            <h6>{'</> by'} {data.site.siteMetadata.author} with <img src={like}/> using <img src={gatsby}/> and <img src={react} />© {new Date().getFullYear()}.</h6>
+            {/* You can change {data.site.siteMetadata.author} to {data.site.siteMetadata.title} 
+            and change the corresponding link to have your name on the footer instead 
+            but it would be awesome if you can keep my name on the footer to give me credit! 
+            (Thank you awesome person!) */}
+            <h6>{'</> by'} <a href="https://github.com/Nikhil-Vats">{data.site.siteMetadata.author}</a> with <img src={like}/> using <img src={gatsby}/> and <img src={react} />© {new Date().getFullYear()}.</h6>
         </div>
     )
 }

@@ -17,7 +17,7 @@ class Form extends React.Component {
       <form
         className={formStyles.form}
         onSubmit={this.submitForm}
-        action="https://formspree.io/mqkpyknd"
+        action="get your free key from formspree.io"
         method="POST"
       >
         <input className={formStyles.email} type="email" required={true} name="email" spellCheck={false} placeholder="Your Email *" />
